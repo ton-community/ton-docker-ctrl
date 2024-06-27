@@ -27,7 +27,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     && rm -rf /var/lib/apt/lists/* \
     && pip3 install --no-cache-dir psutil crc16 requests
 
-ARG GLOBAL_CONFIG_URL=https://ton-blockchain.github.io/global.config.json
+ARG GLOBAL_CONFIG_URL=https://ton.org/global.config.json
 ARG MYTONCTRL_VERSION=master
 
 RUN wget https://raw.githubusercontent.com/ton-blockchain/mytonctrl/${MYTONCTRL_VERSION}/scripts/ton_installer.sh -O /tmp/ton_installer.sh \
@@ -47,7 +47,7 @@ ARG TELEMETRY=false
 ARG DUMP=false
 ARG MODE=validator
 ARG IGNORE_MINIMAL_REQS=true
-ARG GLOBAL_CONFIG_URL=https://ton-blockchain.github.io/global.config.json
+ARG GLOBAL_CONFIG_URL=https://ton.org/global.config.json
 
 COPY --from=ton ${BIN_DIR}/ton/lite-client/lite-client ${BIN_DIR}/ton/lite-client/
 COPY --from=ton ${BIN_DIR}/ton/validator-engine/validator-engine ${BIN_DIR}/ton/validator-engine/

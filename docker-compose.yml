@@ -20,6 +20,7 @@ services:
     environment:
       GLOBAL_CONFIG_URL: ${GLOBAL_CONFIG_URL}
       IGNORE_MINIMAL_REQS: ${IGNORE_MINIMAL_REQS}
+      DUMP: ${DUMP}
     logging:
       driver: "json-file"
       options:
